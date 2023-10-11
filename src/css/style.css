@@ -1,0 +1,113 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Secular One', sans-serif;
+    background-color: #000;
+    overflow: hidden;
+    /*é pra ele n escrollar pra baixo pra n mexer a tela*/
+}
+
+main::after {
+    content: "";
+    /*segura o botao do windows e aperts (.) ponto final pra coloca emojis*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: violet;
+    min-height: 100vh;
+    width: 80vw;
+    background: linear-gradient(-233deg, #000 40%, rgba(0,0,0,0) 65%) no-repeat;
+    /*gradient decrade css gradient(site para criar degrades)*/
+}
+
+main .personagem {
+    display: none;
+    height: 100vh;
+    /* o vh é pra ocupar toda a alrgura da img na tela*/ 
+}
+
+main .personagem.selecionado {
+    display: block;  
+    /* o block é pra mostrar so a img do luffy */ 
+}
+
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* cover é pra cobrir a img,isso é pra img n ficar distorcida*/ 
+}
+
+.conteudo {
+    position: absolute;
+    /*é pro conteudo ficar acima de tudo sobrepor*/
+    top: 0;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    /*direçao em colunas row é um do lado do outro*/
+    justify-content: center;
+    min-height: 100vh;
+    /*pro justify-content: center funcionar ele tem q ter espaço em volta entao eu coloquei largura minima de 100*/
+    max-width: 380px;
+    /*esse é o maximo que eu quero q ele tenha*/
+    z-index: 1;
+    /* é pro gradient ficar atras dos intens*/
+}
+
+.conteudo .nome-personagem {
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Secular One';
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color: #fff;
+    font-family: 'Rubik';
+    line-height: 24px;
+}
+
+
+.conteudo .logo {
+    background-image: url("../img/one-piece-logo.png");
+    width: 230px;
+    height: 100px;
+    background-size: cover;
+    /*mesma coisa ela n vai aparece se n tiver espaço por isso coloquei height e width
+    e precisa do cover pra cobrir esse espaço*/
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: #000;
+    /*tirar o fundo branco*/
+    cursor: pointer;
+    /*pointer é pra aparecer a maozinha ao inves da setinha*/
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+   border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    /*é pro botao selecionado ficar maior*/
+    box-shadow: 0 0 10px #d9d9d9;
+ }
